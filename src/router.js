@@ -3,12 +3,12 @@ import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 //COMPONENTS
-import Home from './modules/home'
+import Header from './modules/header'
 
 const router = () =>
     <Router>
         {/* PUBLIC */}
-        <Route path='/' exact component={Home} />
+        <Route path='/' exact component={Header} />
         {/* NAVIGATION */}
     </Router>
 
