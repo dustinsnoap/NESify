@@ -23,8 +23,8 @@ class Examples extends Component {
         right_arrow: Arrow,
         example_index: 0,
         examples: [
-            [exo1, exr1],
-            [exo2, exr2]
+            {original: exo1, result: exr1, desc: 'Reduced height down to 240px and set colors the stardard palette of 64 colors.'},
+            {original: exo2, result: exr2, desc: 'Reduced the color palette to the NES max potential of 448 colors.'},
         ]
     }
     transform_image = e => {
@@ -53,13 +53,14 @@ class Examples extends Component {
                     <SVG src={this.state.left_arrow} />
                 </div>
                 <div className='images' onMouseMove={this.transform_image}>
-                    <figure className='nesified' style={{backgroundImage: `url(${this.get_image()[1]})`}} />
-                    <figure className='original' style={{backgroundImage: `url(${this.get_image()[0]})`}} />
+                    <figure className='nesified' style={{backgroundImage: `url(${this.get_image().result})`}} />
+                    <figure className='original' style={{backgroundImage: `url(${this.get_image().original})`}} />
                 </div>
                 <div className='nav right' onMouseDown={this.arrow_click_down} onMouseUp={this.arrow_click_up}>
                     <SVG src={this.state.right_arrow} />
                 </div>
             </div>
+            <span className='description'>{this.state.examples[this.state.example_index].desc}</span>
         </Style>
 }
 
