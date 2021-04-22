@@ -12,9 +12,11 @@ const Style = Styled.div`
         display: flex;
         align-items: center;
         .nav {
-            background-color: red;
-            height: 100px;
-            width: 100px;
+            height: 5.5vh;
+            width: 7vh;
+            &.left {
+                transform: rotate(180deg);
+            }
         }
         .images {
             width: 50vh;
@@ -23,11 +25,12 @@ const Style = Styled.div`
             figure {
                 background-size: cover;
                 image-rendering: pixelated;
+                fill: red;
                 position: absolute;
                 height: 100%;
                 width: 100%;
                 &.original {
-                    border-right: 5px solid black;
+                    border-right: 5px solid #222323;
                 }
             }
         }
